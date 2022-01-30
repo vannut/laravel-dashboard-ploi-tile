@@ -1,10 +1,9 @@
 # A short description of the tile
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/vannut/laravel-dashboard-ploi-tile.svg?style=flat-square)](https://packagist.org/packages/vannut/laravel-dashboard-ploi-tile)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/vannut/laravel-dashboard-ploi-tile/run-tests?label=tests)](https://github.com/vannut/laravel-dashboard-ploi-tile/actions?query=workflow%3Arun-tests+branch%3Amaster)
 [![Total Downloads](https://img.shields.io/packagist/dt/vannut/laravel-dashboard-ploi-tile.svg?style=flat-square)](https://packagist.org/packages/vannut/laravel-dashboard-ploi-tile)
 
-A friendly explanation of what your tile does.
+This package gives you tiles to display the status of your infrastructure managed with [Ploi.io](https://ploi.io/register?referrer=VIkpcjy7dXLg5wqyYILz). It can add deployment status from one or multiple sites and the state of your server resources. For the latter you need a subscription which includes server-monitoring.
 
 This tile can be used on [the Laravel Dashboard](https://docs.spatie.be/laravel-dashboard).
 
@@ -17,13 +16,44 @@ composer require vannut/laravel-dashboard-ploi-tile
 ```
 
 ## Usage
+First obtain a personal access-token with the following permissions: `read_servers` & `read_sites`
 
-In your dashboard view you use these two livewire components"
+In `/config/dashboard.php` add this to the `dashboard.tiles` array:
+```php
+'tiles' => [
+    ...
+    'ploi' => [
+        // Your api token
+        'api_token' => 'eyJ0eXAi.....',
+        // the server which you want to show
+        'servers' => [1234],
+        // Sites for which you want to track deployments
+        // serverId:siteId
+        'sites' => [
+            '1234:5678'
+        ],
+        // optional, defaults are:
+        // 'alert_tresholds' => [
+        //     'cpu' => 75,
+        //     'ram' => 75,
+        //     'disk' => 80
+        // ],
+    ],
+    ...
+]
+```
+
+## Components
+In your dashboard you will have the following tiles at your disposal
 
 ```html
 <x-dashboard>
     <livewire:ploi-resources-tile position="a1:a6" />
     <livewire:ploi-deployments-tile position="b1:b6" />
+    <livewire:ploi-single-deployment-tile
+        position="c1"
+        id="1234:5678"
+        />
 </x-dashboard>
 ```
 
