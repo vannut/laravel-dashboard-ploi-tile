@@ -1,4 +1,5 @@
 <x-dashboard-tile :position="$position">
+    <div>
     @foreach($servers as $server)
         <div @class([
                 'border-4  rounded-lg mb-4',
@@ -51,4 +52,5 @@
 
         </div>
     @endforeach
+    </div>
 </x-dashboard-tile>

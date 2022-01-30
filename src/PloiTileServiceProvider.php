@@ -5,6 +5,7 @@ namespace Vannut\PloiTile;
 use Illuminate\Support\ServiceProvider;
 use Vannut\PloiTile\Components\PloiResourcesTileComponent;
 use Vannut\PloiTile\Components\PloiDeploymentsTileComponent;
+use Vannut\PloiTile\Components\PloiSingleDeploymentTileComponent;
 use Livewire\Livewire;
 
 class PloiTileServiceProvider extends ServiceProvider
@@ -25,5 +26,6 @@ class PloiTileServiceProvider extends ServiceProvider
 
         Livewire::component('ploi-resources-tile', PloiResourcesTileComponent::class);
         Livewire::component('ploi-deployments-tile', PloiDeploymentsTileComponent::class);
+        Livewire::component('ploi-single-deployment-tile', PloiSingleDeploymentTileComponent::class);
     }
 }

@@ -10,10 +10,10 @@ class PloiDeploymentsTileComponent extends Component
     public $position;
 
 
-    public function mount(string $position, string $style)
-    {
+    public function mount(
+        string $position
+    ) {
         $this->position = $position;
-        $this->style = $style;
     }
 
 
