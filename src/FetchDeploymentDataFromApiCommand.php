@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
 use Vannut\PloiTile\Actions\DeploymentStore;
 
-class FetchDataFromApiCommand extends Command
+class FetchDeploymentDataFromApiCommand extends Command
 {
     protected $signature = 'dashboard:fetch-deployment-data-from-ploi';
 

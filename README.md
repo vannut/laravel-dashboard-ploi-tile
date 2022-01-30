@@ -20,8 +20,9 @@ First obtain a personal access-token with the following permissions: `read_serve
 
 In `/config/dashboard.php` add this to the `dashboard.tiles` array:
 ```php
+// ...
 'tiles' => [
-    ...
+     // ...
     'ploi' => [
         // Your api token
         'api_token' => 'eyJ0eXAi.....',
@@ -32,15 +33,25 @@ In `/config/dashboard.php` add this to the `dashboard.tiles` array:
         'sites' => [
             '1234:5678'
         ],
-        // optional, defaults are:
+        // optional
         // 'alert_tresholds' => [
         //     'cpu' => 75,
         //     'ram' => 75,
         //     'disk' => 80
         // ],
+        // 'deployment_refresh_interval_in_seconds' => 10
+        // 'resources_refresh_interval_in_seconds' => 60
     ],
-    ...
 ]
+```
+
+In `app\Console\Kernel.php` you need to schedule the commands below to run every x minutes. Off course only add the command(s) you need for your dashboard.
+```php
+protected function schedule(Schedule $schedule)
+{
+    $schedule->command(Vannut\PloiTile\FetchDeploymentDataFromApiCommand::class)->everyMinute();
+    // $schedule->command(Vannut\PloiTile\FetchResourcesDataFromApiCommand::class)->everyMinute(); not yet implemented
+}
 ```
 
 ## Components

@@ -31,7 +31,7 @@ class PloiSingleDeploymentTileComponent extends Component
         return view('laravel-dashboard-ploi-tile-views::single_deployment_tile', [
             'id' => $this->id,
             'site' => $site,
-            'refreshIntervalInSeconds' => config('dashboard.tiles.ploi.deployment_refresh_interval_in_seconds') ?? 20,
+            'refreshIntervalInSeconds' => config('dashboard.tiles.ploi.deployment_refresh_interval_in_seconds') ?? 10,
         ]);
     }
 }

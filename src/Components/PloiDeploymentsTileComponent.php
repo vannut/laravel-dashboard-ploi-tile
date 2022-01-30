@@ -23,7 +23,7 @@ class PloiDeploymentsTileComponent extends Component
         return view('laravel-dashboard-ploi-tile-views::deployments_tile', [
             // 'style' => 'block',
             'sites' => DeploymentStore::make()->getData(),
-            'refreshIntervalInSeconds' => config('dashboard.tiles.ploi.deployment_refresh_interval_in_seconds') ?? 20,
+            'refreshIntervalInSeconds' => config('dashboard.tiles.ploi.deployment_refresh_interval_in_seconds') ?? 10,
         ]);
     }
 }

@@ -14,7 +14,7 @@ class PloiTileServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                FetchDataFromApiCommand::class,
+                FetchDeploymentDataFromApiCommand::class,
             ]);
         }
 

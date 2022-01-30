@@ -43,7 +43,7 @@ class PloiResourcesTileComponent extends Component
         return view('laravel-dashboard-ploi-tile-views::resources_tile', [
             // 'myData' => MyStore::make()->getData(),
             'servers' => $servers,
-            'refreshIntervalInSeconds' => config('dashboard.tiles.ploi.refresh_interval_in_seconds') ?? 60,
+            'refreshIntervalInSeconds' => config('dashboard.tiles.ploi.resources_refresh_interval_in_seconds') ?? 60,
 
         ]);
     }
