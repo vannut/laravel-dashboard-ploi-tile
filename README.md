@@ -1,4 +1,4 @@
-# A short description of the tile
+# Ploi.io Tile
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/vannut/laravel-dashboard-ploi-tile.svg?style=flat-square)](https://packagist.org/packages/vannut/laravel-dashboard-ploi-tile)
 [![Total Downloads](https://img.shields.io/packagist/dt/vannut/laravel-dashboard-ploi-tile.svg?style=flat-square)](https://packagist.org/packages/vannut/laravel-dashboard-ploi-tile)
@@ -18,7 +18,7 @@ composer require vannut/laravel-dashboard-ploi-tile
 ## Usage
 First obtain a personal access-token with the following permissions: `read_servers` & `read_sites`
 
-In `/config/dashboard.php` add this to the `dashboard.tiles` array:
+Change your `/config/dashboard.php` to have a ploi entry in the `dashboard.tiles` array:
 ```php
 // ...
 'tiles' => [
@@ -73,10 +73,6 @@ In your dashboard you will have the following tiles at your disposal
 ``` bash
 composer test
 ```
-
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
 ## Contributing
 
