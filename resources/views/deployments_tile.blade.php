@@ -1,4 +1,4 @@
-<x-dashboard-tile :position="$position">
+<x-dashboard-tile :position="$position" :refresh-interval="$refreshIntervalInSeconds">
     <div class="flex flex-wrap text-xs">
         @foreach($sites as $key => $site)
             @if(isset($site['error']))

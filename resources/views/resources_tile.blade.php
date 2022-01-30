@@ -1,4 +1,4 @@
-<x-dashboard-tile :position="$position">
+<x-dashboard-tile :position="$position" :refresh-interval="$refreshIntervalInSeconds">
     <div>
     @foreach($servers as $server)
         <div @class([

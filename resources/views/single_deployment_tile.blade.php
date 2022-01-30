@@ -1,4 +1,4 @@
-<x-dashboard-tile :position="$position">
+<x-dashboard-tile :position="$position" :refresh-interval="$refreshIntervalInSeconds">
     <div @class([
             'absolute bottom-0 left-0 h-full w-full p-4',
             'grid grid-cols-1 grid-rows-2 items-center gap-2',
@@ -38,5 +38,4 @@
 
 
     </div>
-
 </x-dashboard-tile>
