@@ -26,7 +26,7 @@
                 </div>
             </div>
         @else
-            <h1>{{  $id }}</h1>
+            <h1>{{  $ploiId }}</h1>
             <div class="flex justify-end">
                 @if(isset($site['message']))
                     {{ $site['message'] }}

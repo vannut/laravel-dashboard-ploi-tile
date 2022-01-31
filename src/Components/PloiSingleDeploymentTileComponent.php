@@ -12,24 +12,24 @@ class PloiSingleDeploymentTileComponent extends Component
 
     public function mount(
         string $position,
-        string $id
+        string $ploiId
     ) {
         $this->position = $position;
-        $this->id = $id;
+        $this->ploiId = $ploiId;
     }
 
 
     public function render()
     {
         $sites = collect(DeploymentStore::make()->getData());
-        $site = ($sites->has($this->id))
-            ? $sites->get($this->id)
+        $site = ($sites->has($this->ploiId))
+            ? $sites->get($this->ploiId)
             : [
                 'error' => true,
                 'message' => '404 in local store'
             ];
         return view('laravel-dashboard-ploi-tile-views::single_deployment_tile', [
-            'id' => $this->id,
+            'ploiId' => $this->ploiId,
             'site' => $site,
             'refreshIntervalInSeconds' => config('dashboard.tiles.ploi.deployment_refresh_interval_in_seconds') ?? 10,
         ]);
